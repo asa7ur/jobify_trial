@@ -38,7 +38,7 @@ app.use((err, req, res, next) => {
 
 const port = process.env.PORT || 5100
 
-// connectiong to mongoDB
+// connecting to MongoDB
 
 try {
   await mongoose.connect(process.env.MONGO_URL)
@@ -46,7 +46,6 @@ try {
     console.log(`server running on PORT ${port}`)
   })
 } catch (error) {
-  console.log(error);
-  process.exit(1)  
+  console.log(error)
+  process.exit(1)
 }
-
