@@ -1,3 +1,4 @@
+import 'express-async-errors'
 import * as dotenv from 'dotenv'
 dotenv.config()
 import express from 'express'
@@ -7,6 +8,7 @@ import mongoose from 'mongoose'
 
 // routers
 import jobRouter from './routes/jobRouter.js'
+import authRouter from './routes/authRouter.js'
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'))
@@ -26,6 +28,7 @@ app.post('/', (req, res) => {
 // checking for errors
 
 app.use('/api/v1/jobs', jobRouter) // coming from jobRoutes
+app.use('/api/v1/auth', authRouter) 
 
 app.use('*', (req, res) => {
   res.status(404).json({ msg: 'not found' })
