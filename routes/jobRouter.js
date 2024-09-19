@@ -6,13 +6,13 @@ import {
   getJob,
   createJob,
   updateJob,
-  deletejob,
+  deleteJob,
 } from '../controllers/jobController.js'
 
 // router.get('/', getAllJobs)
 // router.get('/:id', getJob)
 
 router.route('/').get(getAllJobs).post(createJob)
-router.route('/:id').get(getJob).patch(updateJob).delete(deletejob)
+router.route('/:id').get(getJob).patch(updateJob).delete(deleteJob)
 
 export default router
