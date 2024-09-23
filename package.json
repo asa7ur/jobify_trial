@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "setup-project": "npm i && cd client && npm i",
-    "dev": "nodemon server.js"
+    "server": "nodemon server",
+    "client": "cd client && npm run dev",
+    "dev": "concurrently --kill-others-on-fail \" npm run server\" \" npm run client\""
   },
   "keywords": [],
   "author": "",
@@ -14,7 +16,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.41.3",
-    "concurrently": "^8.0.1",
+    "concurrently": "^9.0.1",
     "cookie-parser": "^1.4.6",
     "datauri": "^4.1.0",
     "dayjs": "^1.11.9",
@@ -31,6 +33,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "nanoid": "^5.0.7",
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "react-toastify": "^10.0.5"
   }
 }
