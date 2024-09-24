@@ -7,6 +7,7 @@ import {
   Error,
   Landing,
   AddJob,
+  AllJobs
 } from './pages'
 
 import { action as registerAction } from './pages/Register'
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
             index: true,
             element: <AddJob />,
             action: addJobAction,
+          },
+          {
+            path: 'all-jobs',
+            element: <AllJobs />,
           },
         ],
       },

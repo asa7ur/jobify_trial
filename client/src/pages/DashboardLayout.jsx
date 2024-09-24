@@ -2,7 +2,7 @@ import { Outlet, redirect, useLoaderData, useNavigate } from 'react-router-dom'
 import Wrapper from '../assets/wrappers/Dashboard'
 import { SmallSidebar, BigSidebar, Navbar } from '../components'
 import { useState, useContext, createContext } from 'react'
-import customFetch from '../../utils/customFetch'
+import customFetch from '../utils/customFetch'
 import { toast } from 'react-toastify'
 
 export const loader = async () => {
